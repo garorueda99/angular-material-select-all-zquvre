@@ -1,0 +1,17 @@
+<mat-form-field>
+  <mat-select placeholder="Select"
+              name="Select"
+              [(ngModel)]="selected"
+              multiple
+              #selectionModel="ngModel">
+    <app-select-check-all [model]="selectionModel" 
+                          [values]="options">
+    </app-select-check-all>
+    <mat-option *ngFor="let option of options"
+                [value]="option">
+      {{option}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div>{{selected}}</div>
